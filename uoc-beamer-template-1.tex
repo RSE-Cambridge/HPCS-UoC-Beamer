@@ -36,6 +36,19 @@
 \usepackage[english]{babel}
 \usepackage[latin1]{inputenc}
 
+\usepackage{listings}
+\definecolor{darkgreen}{rgb}{0,.5,0}
+
+\lstdefinestyle{CUDA}{
+    basicstyle=\ttfamily\scriptsize,
+    keywordstyle=\color{blue}\ttfamily\scriptsize,
+    stringstyle=\color{red}\ttfamily\scriptsize,
+    commentstyle=\color{darkgreen}\ttfamily\scriptsize,
+    breaklines=true',
+    captionpos=b  
+}
+ 
+ 
 %\usepackage{times}
 %\usepackage[T1]{fontenc}
 
@@ -93,8 +106,6 @@
 \date[WABI 2006]
 {Workshop on Algorithms in Bioinformatics, 2006}
 
-
-
 % The main document
 
 \begin{document}
@@ -107,13 +118,33 @@
   \tableofcontents
 \end{frame}
 
-
 \section{Introduction}
 
 \subsection{The Model and the Problem}
 
 \begin{frame}{What is haplotyping and why is it important?}
   You hopefully know this after the previous three talks\dots
+\end{frame}
+
+          
+\begin{frame}[fragile]{Example of CUDA code}
+  \textbf{\color{red}Kernel:} C functions which are executed N times in parallel by N different CUDA threads
+  \vfill 
+  \lstset{style=CUDA} \begin{lstlisting}[language=C]
+    // Kernel Definition
+    __global__ void VecAdd(float* A, float* B, float* C)
+    {
+       int i = threadIdx.x;
+       C[i] = A[i] + B[i]; 
+    }
+    
+    int main(void)
+    {
+       ...
+       // Kernel Invocation with N threads
+       return 0;
+    }
+    \end{lstlisting}  
 \end{frame}
 
 \begin{frame}[t]{General formalization of haplotyping.}
