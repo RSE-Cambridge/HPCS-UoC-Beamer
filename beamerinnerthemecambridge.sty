@@ -5,6 +5,7 @@
 % This is based on the PowerPoint template sizes.
 %
 \newlength{\cam@inner@pitch} \setlength{\cam@inner@pitch}{0.0333333\paperheight} 
+\newlength{\cam@inner@smallpitch} \setlength{\cam@inner@smallpitch}{0.022222\paperheight} 
 
 % The University logo
 \pgfdeclareimage[height=2\cam@inner@pitch]{beamertitlelogocambridge}{uc-cmyk}
@@ -99,23 +100,23 @@
   \vskip-\cam@inner@pitch % HACK: Not sure why we need this?
 }
 
-% Part page
+% of page
 
 \defbeamertemplate*{part page}{cambridge theme}[1][]
 {
   \start@fullpage{part page canvas}
-  \vskip2\cam@inner@pitch 
+  \vskip3\cam@inner@pitch 
   {\hfill\usebeamerfont{part page frame number}\usebeamercolor[fg]{part page frame number}\insertframenumber\par}
   \vskip0pt plus 1filll
-  \color@bar[ht=\cam@inner@pitch]{part page separator upper}
-  \color@bar[ht=\cam@inner@pitch]{part page separator lower}
-  \begin{beamercolorbox}[wd=\oversized@paperwidth,sep=0.5\cam@inner@pitch,leftskip=1.5\cam@inner@pitch,rightskip=1.5\cam@inner@pitch,#1]{part page title}
+  \color@bar[ht=\cam@inner@smallpitch]{part page separator upper}
+  \color@bar[ht=\cam@inner@smallpitch]{part page separator lower}
+  \begin{beamercolorbox}[wd=\oversized@paperwidth,sep=1.5\cam@inner@pitch,leftskip=1.5\cam@inner@pitch,rightskip=1.5\cam@inner@pitch,#1]{part page title}
     \hfill\hbox{%
       {\usebeamerfont{part name}\partname~\insertromanpartnumber: }
       {\usebeamerfont{part title}\insertpart\par}
     }
   \end{beamercolorbox}\nointerlineskip%
-  \vskip2\cam@inner@pitch 
+  \vskip3\cam@inner@pitch 
 } 
 
 % (sub-)section in toc: default
