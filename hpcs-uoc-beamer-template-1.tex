@@ -8,28 +8,25 @@
 % See the file LICENSE for more details.
 
 \documentclass{beamer}
-%\documentclass[aspectratio=169]{beamer}
 
-% Setup appearance:
+\usetheme{cambridge} 
 
-%\usetheme{default}
-
+%%% Setup appearance:
 %\usefonttheme[onlylarge]{structurebold}
 %\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
 \setbeamertemplate{navigation symbols}{}  % suppress navigation symbols
 
-\usetheme{cambridge} 
-
-% Standard packages
-
+%%% Standard packages:
 \usepackage[english]{babel}
 \usepackage[latin1]{inputenc}
+\usepackage{graphicx}
 \usepackage{multicol}
-\usepackage{listings}
 \usepackage{subfigure}
+\usepackage{listings}
 
 %%% Customization:
 \setbeamerfont{caption}{size=\tiny}
+\setbeamersize{text margin left=5pt,text margin right=5pt}
 \definecolor{darkgreen}{rgb}{0,.5,0}
 
 \lstdefinestyle{CUDA}{
@@ -139,7 +136,7 @@
     \end{lstlisting}  
 \end{frame}
 
-\begin{frame}[t]{General formalization of haplotyping.}
+\begin{frame}[t]{General formalization of thetyping.}
   \begin{block}{Inputs}
     \begin{itemize}
     \item A \alert{genotype matrix} $G$.
